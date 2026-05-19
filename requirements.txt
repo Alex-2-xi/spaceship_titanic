@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+catboost
+lightgbm
+xgboost
+matplotlib
+requests
+websocket-client
+python-docx
+openpyxl
+kagglehub

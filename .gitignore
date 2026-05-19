@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Local automation or notebook noise
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Generated training logs
+catboost_info/
+
+# Optional local-only files
+docs/kaggle_ranking.png
+docs/kaggle_submission_log.png
