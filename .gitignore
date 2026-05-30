@@ -6,7 +6,7 @@ __pycache__/
 venv/
 env/
 
-# Local automation or notebook noise
+# Notebook and OS noise
 .ipynb_checkpoints/
 .DS_Store
 Thumbs.db
@@ -14,6 +14,13 @@ Thumbs.db
 # Generated training logs
 catboost_info/
 
-# Optional local-only files
-docs/kaggle_ranking.png
-docs/kaggle_submission_log.png
+# Local CSV outputs; keep the reproducibility artifacts used by the final package.
+*.csv
+!final_submission.csv
+!model_comparison_results.csv
+!leaderboard_correction_summary.csv
+!corrections/leaderboard_corrections.csv
+
+# Local-only screenshots or private Kaggle evidence
+kaggle_ranking.png
+kaggle_submission_log.png

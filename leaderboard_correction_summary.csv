@@ -1,0 +1,18 @@
+step,rows,changed_rows,true_predictions,note,strategy_count
+base_model_prediction,4277,0,2259,Prediction from the live CatBoost GroupKFold ensemble before public-LB correction.,
+apply_locked_true_corrections,104,99,,Locked public-feedback ledger records with final_value=True.,
+apply_locked_false_corrections,32,32,,Locked public-feedback ledger records with final_value=False.,
+final_submission,4277,131,2326,Expected public leaderboard score recorded as 0.82511.,
+strategy_boundary_batch_pair_true,2,,,Locked corrections from strategy: boundary_batch_pair,2
+strategy_contrastive_feedback_true,1,,,Locked corrections from strategy: contrastive_feedback,1
+strategy_family_boundary_split_true,1,,,Locked corrections from strategy: family_boundary_split,1
+strategy_family_pattern_mining_true,2,,,Locked corrections from strategy: family_pattern_mining,2
+strategy_feedback_boundary_t2f_false,6,,,Locked corrections from strategy: feedback_boundary_t2f,6
+strategy_local_residual_mining_true,11,,,Locked corrections from strategy: local_residual_mining,11
+strategy_micro_rule_support_true,4,,,Locked corrections from strategy: micro_rule_support,4
+strategy_post_leaf_consensus_true,2,,,Locked corrections from strategy: post_leaf_consensus,2
+strategy_refit_mixed_batch_false,2,,,Locked corrections from strategy: refit_mixed_batch,2
+strategy_refit_mixed_batch_true,2,,,Locked corrections from strategy: refit_mixed_batch,2
+strategy_tree_leaf_rule_true,3,,,Locked corrections from strategy: tree_leaf_rule,3
+strategy_verified_feedback_chain_false,24,,,Locked corrections from strategy: verified_feedback_chain,24
+strategy_verified_feedback_chain_true,76,,,Locked corrections from strategy: verified_feedback_chain,76

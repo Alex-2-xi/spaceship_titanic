@@ -1,4 +1,3 @@
-"""Shared data preparation utilities for the Spaceship Titanic project."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -20,7 +19,6 @@ BASE_NUMERIC = [
 
 
 def load_raw_data(data_dir: Path = DEFAULT_DATA_PATH) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load Kaggle train/test CSV files from the configured data directory."""
     train_path = data_dir / "train.csv"
     test_path = data_dir / "test.csv"
     if not train_path.exists() or not test_path.exists():
@@ -61,7 +59,6 @@ def intelligent_impute(
     fill_values: dict[str, object],
     surname_map: dict[str, str],
 ) -> pd.DataFrame:
-    """Apply the compact, leakage-aware imputation chain used by the final model."""
     df = df.copy()
 
     for col in SPEND_COLS:
@@ -127,7 +124,6 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def prepare_frames(train_raw: pd.DataFrame, test_raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, np.ndarray]:
-    """Return feature-engineered train/test frames, target, and passenger groups."""
     fill_values = compute_fill_values(train_raw)
     surname_map = build_surname_planet_map(train_raw)
     train = engineer_features(intelligent_impute(train_raw, fill_values, surname_map))
@@ -143,7 +139,6 @@ def make_design_matrices(
     drop_vip: bool = False,
     numeric_features: list[str] | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
-    """Build aligned one-hot encoded model matrices for train and test."""
     features = list(numeric_features or BASE_NUMERIC)
     if drop_vip:
         features = [feature for feature in features if feature != "VIP"]
@@ -161,7 +156,6 @@ def load_prepared_matrices(
     data_dir: Path = DEFAULT_DATA_PATH,
     drop_vip: bool = False,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, np.ndarray, pd.Series, list[str]]:
-    """Load raw data and return train/test matrices plus metadata."""
     train_raw, test_raw = load_raw_data(data_dir)
     train, test, y, groups = prepare_frames(train_raw, test_raw)
     x_train, x_test, features = make_design_matrices(train, test, drop_vip=drop_vip)
